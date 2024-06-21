@@ -14,7 +14,6 @@ export const Home = () => {
       setPeople(res.data.results);
     });
   }, [page]);
-
   return (
     <div>
       {people.map((person, i) => (
@@ -36,3 +35,5 @@ export const Home = () => {
     </div>
   );
 };
+
+

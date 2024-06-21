@@ -16,6 +16,13 @@ const getState = ({ getStore, getActions, setStore }) => {
       ],
     },
     actions: {
+
+
+
+
+
+
+
       getCharacters: async () => {
         fetch("https://swapi.dev/api");
       },
