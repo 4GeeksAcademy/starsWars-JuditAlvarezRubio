@@ -1,15 +1,24 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getCharacterById } from "../../api";
+
 
 const Profile = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState({});
+
   useEffect(() => {
-    getCharacterById(id).then((res) => {
-      console.log(res.data);
-    });
-  }, []);
+    const fetchCharacter = async () => {
+      try {
+        const res = await getCharacterById(id);
+        setCharacter(res.data);
+        console.log(res.data);
+      } catch (error) {
+        console.error('Error fetching character:', error);
+      }
+    };
+    fetchCharacter();
+  }, [id]); 
+
   return (
     <div>
       <h1>{character.name}</h1>
@@ -19,8 +28,10 @@ const Profile = () => {
       <p>Skin: {character.skin_color}</p>
       <img
         src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
+        alt={character.name}
       />
     </div>
   );
 };
+
 export default Profile;

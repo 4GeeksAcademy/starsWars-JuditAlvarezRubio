@@ -2,6 +2,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 
+// import { getPeople, getPlanets, getVehicles } from "./views/api.js";
 //include your index.scss file into the bundle
 import "../styles/index.css";
 
