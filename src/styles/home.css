@@ -1,0 +1,14 @@
+/* styles.css */
+
+.small-card {
+    width: 150px; 
+    margin: 0 auto; 
+  }
+  
+  .small-card-img {
+    height: 150px; 
+    object-fit: cover; 
+  }
+  
+
+  

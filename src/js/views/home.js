@@ -3,6 +3,8 @@ import "../../styles/home.css";
 import { getPeople, getVehicles, getPlanets } from "./api";
 import { getIdFromUrl } from "../../utils";
 import { Link } from "react-router-dom";
+import { Carousel, Card } from 'react-bootstrap';
+
 
 export const Home = () => {
   const [people, setPeople] = useState([]);
@@ -50,41 +52,67 @@ export const Home = () => {
 
   return (
     <>
-      <div className="d-flex">
-        {people.map((person, i) => (
-          <Link to={`/profile/${getIdFromUrl(person.url)}`} key={i}>
-            <img
+  <Carousel>
+      {people.map((person, i) => (
+        <Carousel.Item key={i}>
+          <Card className="small-card">
+            <Card.Img
               src={`https://starwars-visualguide.com/assets/img/characters/${getIdFromUrl(person.url)}.jpg`}
               alt={person.name}
+              className="img-fluid small-card-img"
             />
-            <p>{person.name}</p>
-          </Link>
-        ))}
-      </div>
+            <Card.Body>
+              <Card.Title>{person.name}</Card.Title>
+              <Link to={`/profile/${getIdFromUrl(person.url)}`}>Ver perfil</Link>
+            </Card.Body>
+          </Card>
+        </Carousel.Item>
+      ))}
+    </Carousel>
 
-      <div>
-        {vehicles.map((vehicle, i) => (
-          <Link to={`/vehicles/${getIdFromUrl(vehicle.url)}`} key={i}>
+ 
+
+
+ 
+
+
+     
+   
+    <Carousel>
+      {vehicles.map((vehicle, i) => (
+        <Carousel.Item key={i}>
+          <Link to={`/vehicles/${getIdFromUrl(vehicle.url)}`}>
             <img
+              className="d-block w-100"
               src={`https://starwars-visualguide.com/assets/img/vehicles/${getVehicles(vehicle.url)}.jpg`}
               alt={vehicle.name}
             />
-            <p>{vehicle.name}</p>
+            <Carousel.Caption>
+              <p>{vehicle.name}</p>
+            </Carousel.Caption>
           </Link>
-        ))}
-      </div>
+        </Carousel.Item>
+      ))}
+    </Carousel>
 
-      <div>
-        {planets.map((planet, i) => (
-          <Link to={`/planets/${getPlanets(planet.url)}`} key={i}>
+     
+
+    <Carousel>
+      {planets.map((planet, i) => (
+        <Carousel.Item key={i}>
+          <Link to={`/planets/${getPlanets(planet.url)}`}>
             <img
+              className="d-block w-100"
               src={`https://starwars-visualguide.com/assets/img/planets/${getPlanets(planet.url)}.jpg`}
               alt={planet.name}
             />
-            <p>{planet.name}</p>
+            <Carousel.Caption>
+              <p>{planet.name}</p>
+            </Carousel.Caption>
           </Link>
-        ))}
-      </div>
+        </Carousel.Item>
+      ))}
+    </Carousel>
     </>
   );
 };
