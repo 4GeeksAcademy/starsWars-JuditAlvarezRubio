@@ -1,5 +1,7 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { getPlanets } from "./api";
 
 
 
@@ -10,7 +12,7 @@ export const Planets = () => {
     useEffect(() => {
         const fetchPlanet = async () => {
             try {
-                const res = await getPlanetById(id); 
+                const res = await getPlanets(id); 
                 setPlanet(res.data);
                 console.log(res.data);
             } catch (error) {
@@ -21,6 +23,8 @@ export const Planets = () => {
     }, [id]); 
 
     return (
+        <>
+        {planet?
         <div>
             <h1>{planet.name}</h1>
             <p>Rotation period: {planet.rotation_period}</p>
@@ -32,6 +36,9 @@ export const Planets = () => {
                 alt={planet.name}
             />
         </div>
+        :
+        <div>loading</div>}
+        </>
     );
 };
 

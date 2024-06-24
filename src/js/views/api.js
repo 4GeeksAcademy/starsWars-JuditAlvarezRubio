@@ -18,7 +18,7 @@ export const getPeople = () => {
       });
   };
   export const getVehicles = () => {
-    return fetch('https://swapi.dev/api/vehicles')
+    return fetch('https://swapi.dev/api/vehicles/')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -35,8 +35,8 @@ export const getPeople = () => {
   };
 
 
-  export const getPlanets = () => {
-    return fetch('https://swapi.dev/api/planets')
+  export const getPlanets = (id) => {
+    return fetch('https://swapi.dev/api/planets/')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -51,3 +51,19 @@ export const getPeople = () => {
       throw error;
     });
   }
+export const getCharacterById = (id) => {
+  return fetch(`https://swapi.dev/api/people/${id}`)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    return data; 
+  })
+  .catch(error => {
+    console.error('Error fetching planets:', error);
+    throw error;
+  });
+}

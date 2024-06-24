@@ -1,5 +1,7 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { getCharacterById } from "./api";
 
 
 const Profile = () => {
@@ -10,16 +12,22 @@ const Profile = () => {
     const fetchCharacter = async () => {
       try {
         const res = await getCharacterById(id);
-        setCharacter(res.data);
-        console.log(res.data);
+        setCharacter(res);
+        console.log(res);
       } catch (error) {
         console.error('Error fetching character:', error);
       }
     };
+    console.log(id)
+    console.log(character)
     fetchCharacter();
   }, [id]); 
 
   return (
+    <>
+   
+    {character?
+
     <div>
       <h1>{character.name}</h1>
       <p>Height: {character.height}</p>
@@ -31,6 +39,10 @@ const Profile = () => {
         alt={character.name}
       />
     </div>
+    :
+    <div>loading</div>}
+    
+    </>
   );
 };
 

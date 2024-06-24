@@ -50,7 +50,7 @@ export const Home = () => {
 
   return (
     <>
-      <div>
+      <div className="d-flex">
         {people.map((person, i) => (
           <Link to={`/profile/${getIdFromUrl(person.url)}`} key={i}>
             <img
@@ -66,7 +66,7 @@ export const Home = () => {
         {vehicles.map((vehicle, i) => (
           <Link to={`/vehicles/${getIdFromUrl(vehicle.url)}`} key={i}>
             <img
-              src={`https://starwars-visualguide.com/assets/img/vehicles/${getIdFromUrl(vehicle.url)}.jpg`}
+              src={`https://starwars-visualguide.com/assets/img/vehicles/${getVehicles(vehicle.url)}.jpg`}
               alt={vehicle.name}
             />
             <p>{vehicle.name}</p>
@@ -76,9 +76,9 @@ export const Home = () => {
 
       <div>
         {planets.map((planet, i) => (
-          <Link to={`/planets/${getIdFromUrl(planet.url)}`} key={i}>
+          <Link to={`/planets/${getPlanets(planet.url)}`} key={i}>
             <img
-              src={`https://starwars-visualguide.com/assets/img/planets/${getIdFromUrl(planet.url)}.jpg`}
+              src={`https://starwars-visualguide.com/assets/img/planets/${getPlanets(planet.url)}.jpg`}
               alt={planet.name}
             />
             <p>{planet.name}</p>

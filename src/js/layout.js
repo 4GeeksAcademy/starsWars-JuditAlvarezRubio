@@ -9,9 +9,9 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { Profile } from "react";
-import { Vehicles } from "./views/vehicles";
-import Planets from "./views/planets";
+import Profile  from "./views/profile.jsx";
+import  Vehicles  from "./views/vehicles.jsx";
+import Planets from "./views/planets.jsx";
 
 
 //create your first component
