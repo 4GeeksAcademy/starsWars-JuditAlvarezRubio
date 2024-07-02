@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getVehicles } from "./api";
+import { getVehicles } from "../store/appContext";
 
 const Vehicles = () => {
   const { id } = useParams();
