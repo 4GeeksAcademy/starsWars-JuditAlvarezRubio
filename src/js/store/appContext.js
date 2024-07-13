@@ -33,69 +33,69 @@ import getState from "./flux.js";
 // };
 
 export const getPeople = () => {
-  return fetch('https://swapi.dev/api/people')
-    .then(response => {
+  return fetch("https://swapi.dev/api/people")
+    .then((response) => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
       return response.json();
     })
-    .then(data => {
+    .then((data) => {
       return data;
     })
-    .catch(error => {
-      console.error('Error fetching characters:', error);
+    .catch((error) => {
+      console.error("Error fetching characters:", error);
       throw error;
     });
 };
 
 export const getVehicles = () => {
-  return fetch('https://swapi.dev/api/vehicles/')
-    .then(response => {
+  return fetch("https://swapi.dev/api/vehicles/")
+    .then((response) => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
       return response.json();
     })
-    .then(data => {
-      return data; 
+    .then((data) => {
+      return data;
     })
-    .catch(error => {
-      console.error('Error fetching vehicles:', error);
+    .catch((error) => {
+      console.error("Error fetching vehicles:", error);
       throw error;
     });
 };
 
 export const getPlanets = () => {
-  return fetch('https://swapi.dev/api/planets/')
-    .then(response => {
+  return fetch("https://swapi.dev/api/planets/")
+    .then((response) => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
       return response.json();
     })
-    .then(data => {
-      return data; 
+    .then((data) => {
+      return data;
     })
-    .catch(error => {
-      console.error('Error fetching planets:', error);
+    .catch((error) => {
+      console.error("Error fetching planets:", error);
       throw error;
     });
 };
 
 export const getCharacterById = (id) => {
   return fetch(`https://swapi.dev/api/people/${id}`)
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
       return response.json();
     })
-    .then(data => {
-      return data; 
+    .then((data) => {
+      return data;
     })
-    .catch(error => {
-      console.error('Error fetching character by ID:', error);
+    .catch((error) => {
+      console.error("Error fetching character by ID:", error);
       throw error;
     });
 };
@@ -125,4 +125,3 @@ const injectContext = (PassedComponent) => {
 };
 
 export default injectContext;
-

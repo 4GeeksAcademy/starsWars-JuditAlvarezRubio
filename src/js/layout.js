@@ -10,8 +10,6 @@ import Vehicles from "./views/vehicles.jsx";
 import Planets from "./views/planets.jsx";
 import injectContext from "./store/appContext.js";
 
-
-
 const Layout = () => {
   const basename = process.env.BASENAME || "";
 
