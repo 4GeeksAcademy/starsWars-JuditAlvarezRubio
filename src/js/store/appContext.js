@@ -1,36 +1,36 @@
 import React, { useState, useContext, createContext } from "react";
 import getState from "./flux.js";
 
-const AppContext = createContext();
+// export const AppContext = createContext();
 
-export const useAppContext = () => {
-  const context = useContext(AppContext);
-  if (!context) {
-    throw new Error('useAppContext debe usarse dentro de un AppProvider');
-  }
-  return context;
-};
+// export const useAppContext = () => {
+//   const context = useContext(AppContext);
+//   if (!context) {
+//     throw new Error('useAppContext debe usarse dentro de un AppProvider');
+//   }
+//   return context;
+// };
 
-export const AppProvider = ({ children }) => {
-  const [favoritesCharacters, setFavoritesCharacters] = useState([]);
-  const [favoritesPlanets, setFavoritesPlanets] = useState([]);
-  const [favoritesVehicles, setFavoritesVehicles] = useState([]);
+// export const AppProvider = ({ children }) => {
+//   const [favoritesCharacters, setFavoritesCharacters] = useState([]);
+//   const [favoritesPlanets, setFavoritesPlanets] = useState([]);
+//   const [favoritesVehicles, setFavoritesVehicles] = useState([]);
 
-  return (
-    <AppContext.Provider
-      value={{
-        favoritesCharacters,
-        setFavoritesCharacters,
-        favoritesPlanets,
-        setFavoritesPlanets,
-        favoritesVehicles,
-        setFavoritesVehicles,
-      }}
-    >
-      {children}
-    </AppContext.Provider>
-  );
-};
+//   return (
+//     <AppContext.Provider
+//       value={{
+//         favoritesCharacters,
+//         setFavoritesCharacters,
+//         favoritesPlanets,
+//         setFavoritesPlanets,
+//         favoritesVehicles,
+//         setFavoritesVehicles,
+//       }}
+//     >
+//       {children}
+//     </AppContext.Provider>
+//   );
+// };
 
 export const getPeople = () => {
   return fetch('https://swapi.dev/api/people')
@@ -99,6 +99,7 @@ export const getCharacterById = (id) => {
       throw error;
     });
 };
+export const Context = React.createContext(null);
 
 const injectContext = (PassedComponent) => {
   const StoreWrapper = (props) => {
@@ -125,4 +126,3 @@ const injectContext = (PassedComponent) => {
 
 export default injectContext;
 
-export const Context = React.createContext(null);

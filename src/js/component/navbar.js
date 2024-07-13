@@ -1,11 +1,12 @@
 
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Dropdown } from 'react-bootstrap';
-import { useAppContext } from "../store/appContext";
+import { Context} from "../store/appContext";
 
 export const Navbar = () => {
-  const { favoritesCharacters, favoritesPlanets, favoritesVehicles } = useAppContext();
+  const {actions, store}=useContext(Context)
+  // const { favoritesCharacters, favoritesPlanets, favoritesVehicles } = useAppContext();
   return (
     <nav className="navbar navbar-light bg-light mb-3">
       <Link to="/">
@@ -24,15 +25,15 @@ export const Navbar = () => {
             Favorites
           </button>
           <ul className="dropdown-menu">
-            {favoritesCharacters.length > 0 && favoritesCharacters.map((character, index) => (
-              <Dropdown.Item key={`character-${index}`}>{character.name}</Dropdown.Item>
+            {store.favorites.length > 0 && store.favorites.map((favorite, index) => (
+              <Dropdown.Item key={`favorite-${index}`}>{favorite}</Dropdown.Item>
             ))}
-            {favoritesPlanets.length > 0 && favoritesPlanets.map((planet, index) => (
+            {/* {favoritesPlanets.length > 0 && favoritesPlanets.map((planet, index) => (
               <Dropdown.Item key={`planet-${index}`}>{planet.name}</Dropdown.Item>
             ))}
             {favoritesVehicles.length > 0 && favoritesVehicles.map((vehicle, index) => (
               <Dropdown.Item key={`vehicle-${index}`}>{vehicle.name}</Dropdown.Item>
-            ))}
+            ))} */}
           </ul>
         </div>
       </div>

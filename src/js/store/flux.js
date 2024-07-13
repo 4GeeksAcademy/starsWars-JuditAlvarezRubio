@@ -1,22 +1,20 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      characters: [],
+      favorites: [],
     },
     actions: {
-      getCharacters: async () => {
-        try {
-          const response = await fetch("https://swapi.dev/api/people/");
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          const data = await response.json();
-          setStore({ characters: data.results });
-        } catch (error) {
-          console.error("Error fetching characters:", error);
-        }
+      addToFavorites: (name) => {
+        const store = getStore();
+        const updatedFavorites=[...store.favorites, name]
+        setStore({ favorites: updatedFavorites });
+        
+     
       },
-
+      deleteFavorite:() => {
+        const store = getStore();
+       
+      },
       // Use getActions to call a function within a function
       exampleFunction: () => {
         getActions().changeColor(0, "green");
