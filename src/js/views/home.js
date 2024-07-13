@@ -3,7 +3,7 @@ import "../../styles/home.css";
 import { getPeople, getVehicles, getPlanets, Context, } from "../store/appContext"
 import { getIdFromUrl } from "../../utils";
 import { Link } from "react-router-dom";
-import { Carousel, Card, Button } from 'react-bootstrap';
+import {  Card, Button } from 'react-bootstrap';
 
 
 
@@ -75,67 +75,62 @@ export const Home = () => {
 
   return (
     <>
-    <div className="d-flex overflow-auto mb-5 py-4" style={{ maxWidth: "100%", whiteSpace: "nowrap" }} >
-        {people.map((person, i) => (
-         <Card className="small-card">
-              <Card.Img
-                src={`https://starwars-visualguide.com/assets/img/characters/${getIdFromUrl(person.url)}.jpg`}
-                alt={person.name}
-                className="img-fluid small-card-img"
-              />
-              <Card.Body>
-                <Card.Title>{person.name}</Card.Title>
-                <Link to={`/profile/${getIdFromUrl(person.url)}`}>Ver perfil</Link>
-                <Button variant="primary" onClick={() => actions.addToFavorites(person.name)}>
-                  Add to Favorites
-                </Button>
-              </Card.Body>
-            </Card>
-         
-        ))}
-     </div>
+   <div className="d-flex overflow-auto mb-5 py-4 custom-scroll" style={{ maxWidth: "100%", whiteSpace: "nowrap" }}>
+      {people.map((person, i) => (
+        <Card className="large-card mx-2 shadow" key={i}>
+          <Card.Img
+            src={`https://starwars-visualguide.com/assets/img/characters/${getIdFromUrl(person.url)}.jpg`}
+            alt={person.name}
+            className="img-fluid large-card-img"
+          />
+          <Card.Body>
+            <Card.Title>{person.name}</Card.Title>
+            <Link to={`/profile/${getIdFromUrl(person.url)}`} className="btn btn-link p-0 d-block">Learn more!</Link>
+            <Button variant="primary" className="mt-2 d-block" onClick={() => actions.addToFavorites(person.name)}>
+              Add to Favorites
+            </Button>
+          </Card.Body>
+        </Card>
+      ))}
+    </div>
 
-      <Carousel>
-        {vehicles.map((vehicle, i) => (
-          <Carousel.Item key={i}>
-            <Card className="small-card">
-              <Card.Img
-                src={`https://starwars-visualguide.com/assets/img/vehicles/${getIdFromUrl(vehicle.url)}.jpg`}
-                alt ={vehicle.name}
-                className="img-fluid small-card-img"
-                />
-                <Card.Body>
-                <Card.Title>{vehicle.name}</Card.Title>
-                <Link to={`/vehicles/${getIdFromUrl(vehicle.url)}`}>Ver perfil </Link>
-                <Button variant="primary" onClick={() => actions.addToFavorites(vehicle.name)}>
-                  Add to Favorites
-                </Button>
-              </Card.Body>
-              </Card>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+    <div className="d-flex overflow-auto mb-5 py-4 custom-scroll" style={{ maxWidth: "100%", whiteSpace: "nowrap" }}>
+      {vehicles.map((vehicle, i) => (
+        <Card className="large-card mx-2 shadow" key={i}>
+          <Card.Img
+            src={`https://starwars-visualguide.com/assets/img/vehicles/${getIdFromUrl(vehicle.url)}.jpg`}
+            alt={vehicle.name}
+            className="img-fluid large-card-img"
+          />
+          <Card.Body>
+            <Card.Title>{vehicle.name}</Card.Title>
+            <Link to={`/vehicles/${getIdFromUrl(vehicle.url)}`} className="btn btn-link p-0 d-block">Learn more!</Link>
+            <Button variant="primary" className="mt-2 d-block" onClick={() => actions.addToFavorites(vehicle.name)}>
+              Add to Favorites
+            </Button>
+          </Card.Body>
+        </Card>
+      ))}
+    </div>
 
-      <Carousel>
-        {planets.map((planet, i) => (
-          <Carousel.Item key={i}>
-            <Card className="small-card">
-            <Card.Img
-                src={`https://starwars-visualguide.com/assets/img/planets/${getIdFromUrl(planet.url)}.jpg`}
-                alt ={planet.name}
-                className="img-fluid small-card-img"
-              />
-                <Card.Body>
-                <Card.Title>{planet.name}</Card.Title>
-            <Link to={`/planets/${getIdFromUrl(planet.url)}`}>Ver perfil </Link>
-            <Button  variant="primary" onClick={() => actions.addToFavorites(planet.name)}>
-                  Add to Favorites
-                </Button>
-            </Card.Body>
-            </Card>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+    <div className="d-flex overflow-auto mb-5 py-4 custom-scroll" style={{ maxWidth: "100%", whiteSpace: "nowrap" }}>
+      {planets.map((planet, i) => (
+        <Card className="large-card mx-2 shadow" key={i}>
+          <Card.Img
+            src={`https://starwars-visualguide.com/assets/img/planets/${getIdFromUrl(planet.url)}.jpg`}
+            alt={planet.name}
+            className="img-fluid large-card-img"
+          />
+          <Card.Body>
+            <Card.Title>{planet.name}</Card.Title>
+            <Link to={`/planets/${getIdFromUrl(planet.url)}`} className="btn btn-link p-0 d-block">Learn more!</Link>
+            <Button variant="primary" className="mt-2 d-block" onClick={() => actions.addToFavorites(planet.name)}>
+              Add to Favorites
+            </Button>
+          </Card.Body>
+        </Card>
+      ))}
+    </div>
             
              
     </>

@@ -11,9 +11,10 @@ const getState = ({ getStore, getActions, setStore }) => {
         
      
       },
-      deleteFavorite:() => {
+      deleteFavorite:(name) => {
         const store = getStore();
-       
+        const deleteFavorites = store.favorites.filter(favorite => favorite !== name);
+        setStore({ favorites: deleteFavorites });
       },
       // Use getActions to call a function within a function
       exampleFunction: () => {
