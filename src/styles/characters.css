@@ -1,0 +1,66 @@
+
+  
+  /* Contenedor de la tarjeta que ocupa todo el ancho */
+  .full-width-container {
+    width: 100%; /* Ocupa todo el ancho del viewport */
+    padding: 20px; /* Espaciado alrededor del contenido */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho total */
+    background: rgba(0, 0, 0, 0.8); /* Fondo negro con transparencia */
+  }
+  
+  /* Tarjeta estilo estrella que ocupa el ancho completo del contenedor */
+  .shadow-star {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    max-width: 100%; /* Evita que la tarjeta sea más ancha que el contenedor */
+    margin: 0 auto; /* Centra la tarjeta */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(0, 0, 0, 0.7); /* Fondo de la tarjeta oscuro */
+    border: 1px solid #444;
+    border-radius: 10px;
+  }
+  
+  /* Efecto al pasar el cursor sobre la tarjeta */
+  .shadow-star:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.6); /* Efecto de resplandor */
+  }
+  
+  /* Ajuste de la imagen */
+  .large-card-img {
+    width: 100%; /* Asegura que la imagen ocupa todo el ancho del contenedor de la tarjeta */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Ajusta la imagen para cubrir el área de la tarjeta */
+    border-radius: 10px 10px 0 0; /* Esquinas redondeadas en la parte superior */
+  }
+  
+  /* Estilo para el botón "Learn more!" */
+  .btn-learn-more {
+    color: #fff; /* Color del texto */
+    background-color: #007bff; /* Fondo azul */
+    border-color: #007bff; /* Borde azul */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-weight: bold; /* Texto en negrita */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block;
+  }
+  
+  .btn-learn-more:hover {
+    background-color: #0056b3; /* Azul oscuro al pasar el cursor */
+    border-color: #004085; /* Borde azul oscuro al pasar el cursor */
+  }
+  
+  /* Tarjeta de detalles amarilla */
+  .details-card {
+    background-color: #ffcc00; /* Fondo amarillo */
+    color: #000; /* Texto negro */
+    padding: 15px; /* Espaciado interno aumentado */
+    border-radius: 10px;
+    margin-top: 100px; /* Margen superior para separación con el contenido anterior */
+  }
+  
+  /* Estilo para las etiquetas dentro de la tarjeta amarilla */
+  .details-card strong {
+    color: #333; /* Color más oscuro para las etiquetas */
+  }
+  

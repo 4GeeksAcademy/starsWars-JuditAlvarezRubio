@@ -1,6 +1,74 @@
+/* Estilo para los títulos */
+.text-title {
+  font-weight: bold; /* Pone el texto en negrita */
+  color: #ffcc00; /* Color amarillo para el texto */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra para darle más contraste */
+}
+
+/* Fondo de la página */
+body {
+  background: url('https://example.com/space-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #e0e0e0; /* Color de texto general */
+}
+
+/* Secciones con fondo oscuro */
+.container {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con transparencia */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Tarjetas estilo estrella */
+.shadow-star {
+  min-width: 280px;
+  max-width: 300px;
+  margin: 0 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(0, 0, 0, 0.7); /* Fondo de la tarjeta oscuro */
+  border: 1px solid #444;
+}
+
+.shadow-star:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.6); /* Efecto de resplandor */
+}
+
+.large-card-img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Estilo para el botón "Learn more!" */
+.btn-learn-more {
+  color: #fff; /* Color del texto */
+  background-color: #007bff; /* Fondo azul */
+  border-color: #007bff; /* Borde azul */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.btn-learn-more:hover {
+  background-color: #0056b3; /* Azul oscuro al pasar el cursor */
+  border-color: #004085; /* Borde azul oscuro al pasar el cursor */
+}
+
+/* Botones de acción */
+.card-body .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.card-body .btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Scroll personalizado */
 .custom-scroll {
   scrollbar-width: thin;
-  scrollbar-color: #343a40 #e9ecef;
+  scrollbar-color: #e0e0e0 #000;
 }
 
 .custom-scroll::-webkit-scrollbar {
@@ -8,27 +76,10 @@
 }
 
 .custom-scroll::-webkit-scrollbar-track {
-  background: #e9ecef;
+  background: #000;
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-  background-color: #343a40;
+  background-color: #e0e0e0;
   border-radius: 10px;
-}
-
-.large-card {
-  min-width: 300px;
-}
-
-.large-card-img {
-  height: 300px;
-  object-fit: cover;
-}
-
-.card-body {
-  text-align: center;
-}
-
-.btn-link {
-  margin-bottom: 10px;
 }

@@ -1,0 +1,63 @@
+
+  
+  /* Contenedor de la tarjeta */
+  .full-width-container {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con transparencia */
+    border-radius: 10px;
+  }
+  
+  /* Tarjetas estilo estrella */
+  .shadow-star {
+    min-width: 280px;
+    max-width: 100%; /* Ancho completo del contenedor */
+    margin: 0 auto; /* Centramos la tarjeta */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(0, 0, 0, 0.7); /* Fondo de la tarjeta oscuro */
+    border: 1px solid #444;
+  }
+  
+  .shadow-star:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.6); /* Efecto de resplandor */
+  }
+  
+  .large-card-img {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  /* Estilo para el contenido de la tarjeta */
+  .details-card {
+    background-color: #ffcc00; /* Fondo amarillo */
+    color: #000; /* Color del texto */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-top: 10px; /* Espacio superior */
+  }
+  
+  .details-card .text-end {
+    margin-bottom: 10px; /* Espacio inferior */
+  }
+  
+  /* Estilo para el botón "Learn more!" */
+  .btn-learn-more {
+    color: #fff; /* Color del texto */
+    background-color: #007bff; /* Fondo azul */
+    border-color: #007bff; /* Borde azul */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-weight: bold; /* Texto en negrita */
+  }
+  
+  .btn-learn-more:hover {
+    background-color: #0056b3; /* Azul oscuro al pasar el cursor */
+    border-color: #004085; /* Borde azul oscuro al pasar el cursor */
+  }
+  
+  /* Estilo del cargador */
+  .spinner-border {
+    border-color: #ffcc00; /* Color del borde del spinner */
+  }
+  
