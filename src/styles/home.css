@@ -1,58 +1,58 @@
 /* Estilo para los títulos */
 .text-title {
-  font-weight: bold; /* Pone el texto en negrita */
-  color: #ffcc00; /* Color amarillo para el texto */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra para darle más contraste */
+  font-weight: bold;
+  color: #ffcc00;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Fondo de la página */
 body {
-  background: url('https://example.com/space-background.jpg') no-repeat center center fixed;
+  background: url('https://images4.alphacoders.com/669/669969.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #e0e0e0; /* Color de texto general */
 }
 
 /* Secciones con fondo oscuro */
 .container {
-  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con transparencia */
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 20px;
   border-radius: 10px;
 }
 
-/* Tarjetas estilo estrella */
+/* Tarjetas  */
 .shadow-star {
   min-width: 280px;
   max-width: 300px;
   margin: 0 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: rgba(0, 0, 0, 0.7); /* Fondo de la tarjeta oscuro */
+  background: rgba(0, 0, 0, 0.7);
   border: 1px solid #444;
 }
 
 .shadow-star:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.6); /* Efecto de resplandor */
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.6);
 }
 
 .large-card-img {
-  height: 250px;
+  height: 400px; /* Ajusta si es necesario */
   object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
 
 /* Estilo para el botón "Learn more!" */
 .btn-learn-more {
-  color: #fff; /* Color del texto */
-  background-color: #007bff; /* Fondo azul */
-  border-color: #007bff; /* Borde azul */
-  border-radius: 5px; /* Bordes redondeados */
-  padding: 10px 20px; /* Espaciado interno */
-  font-weight: bold; /* Texto en negrita */
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
 }
 
 .btn-learn-more:hover {
-  background-color: #0056b3; /* Azul oscuro al pasar el cursor */
-  border-color: #004085; /* Borde azul oscuro al pasar el cursor */
+  background-color: #0056b3;
+  border-color: #004085;
 }
 
 /* Botones de acción */
@@ -65,7 +65,7 @@ body {
   background-color: #c82333;
 }
 
-/* Scroll personalizado */
+/* Scroll */
 .custom-scroll {
   scrollbar-width: thin;
   scrollbar-color: #e0e0e0 #000;

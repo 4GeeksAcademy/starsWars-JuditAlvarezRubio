@@ -76,11 +76,35 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
       },
       
+
+      getVehicleById: async (id) => {
+        try {
+          const response = await fetch(`https://swapi.dev/api/vehicles/${id}/`);
+          if (!response.ok) throw new Error('Network response was not ok');
+          const data = await response.json();
+          return data; 
+        } catch (error) {
+          console.error("Error fetching vehicle by ID:", error);
+          throw error; 
+        }
+      },
       
       loadSomeData: () => {
 
       },
 
+
+      getPlanetsById: async (id) => {
+        try {
+          const response = await fetch(`https://swapi.dev/api/planets/${id}/`); // Nota el uso de '/'. 
+          if (!response.ok) throw new Error('Network response was not ok');
+          const data = await response.json();
+          return data; // Devuelve los datos del planeta
+        } catch (error) {
+          console.error("Error fetching planets by id:", error);
+          throw error; // Propaga el error para que sea manejado en el componente
+        }
+      },
       
       changeColor: (index, color) => {
         const store = getStore();

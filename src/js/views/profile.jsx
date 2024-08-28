@@ -1,22 +1,35 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router";
 import { Card, Container, Row, Col } from "react-bootstrap";
 import "../../styles/characters.css";
+import { Context } from "../store/appContext"; 
 
 const Profile = () => {
   const { id } = useParams();
-  const [character, setCharacter] = useState({});
+  const { store, actions } = useContext(Context);
+  const [character, setCharacter] = useState(null);
+
+  useEffect(() => {
+    const fetchCharacter = async () => {
+      try {
+        const data = await actions.getCharacterById(id);
+        setCharacter(data);
+      } catch (error) {
+        console.error("Error fetching character:", error);
+      }
+    };
+
+    fetchCharacter();
+  }, [id, actions]);
 
   return (
-
     <>
       {character ? (
         <Container fluid className="full-width-container d-flex justify-content-center align-items-center">
-          <Row className="w-100">
+          <Row className="w-100 no-gutters"> 
             <Col xs={12}>
               <Card className="shadow-star border-0 mx-auto">
-                <Row noGutters>
+                <Row className="no-gutters"> 
                   <Col xs={12} md={6} className="p-0">
                     <Card.Img
                       variant="top"
@@ -32,7 +45,7 @@ const Profile = () => {
                       </Card.Title>
                       <Card.Text>
                         <p>
-                          {character.description || "Lorem ipsum dolor sit amet. Est omnis maxime ex quia ullam ut provident dolores ab dolorum accusantium eum aliquid reiciendis vel odio ratione At aperiam quisquam! Aut adipisci magni et velit ullam sed similique vitae ut omnis minus. Ut dignissimos voluptatibus ut similique porro in voluptatem exercitationem ea velit asperiores. Sit modi repellendus est rerum blanditiis ut voluptatem nulla et culpa nostrum sed labore reprehenderit."}
+                          {character.description || "Lorem ipsum dolor sit amet..."}
                         </p>
                       </Card.Text>
                       <div className="details-card">
@@ -64,7 +77,7 @@ const Profile = () => {
         </div>
       )}
     </>
-);
+  );
 };
 
 export default Profile;
